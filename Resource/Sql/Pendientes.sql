@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS municipio (
   descripcion VARCHAR(2000) NULL,
   iddepartmento INT(11),
   PRIMARY KEY (id),
-  foreign key (iddepartmento) references departmento(id) ON DELETE SET NULL ON UPDATE CASCADE
+  foreign key (iddepartmento) references departmento(id) ON DELETE RESTRICT ON UPDATE CASCADE
 )Engine=InnoDB;
 
 create table estudiante(
@@ -34,8 +34,8 @@ create table estudiante(
   fecha_nacimiento DATE NULL,
   id_municipio INT(11),
   primary key(id),
-  foreign key(id_tipo_documento) references tipo_documento(id) ON DELETE SET NULL ON UPDATE CASCADE,
-  foreign key(id_municipio) references municipio(id) ON DELETE SET NULL ON UPDATE CASCADE
+  foreign key(id_tipo_documento) references tipo_documento(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+  foreign key(id_municipio) references municipio(id) ON DELETE RESTRICT ON UPDATE CASCADE
 )Engine=InnoDB;
 
 
